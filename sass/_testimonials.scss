@@ -1,0 +1,121 @@
+$primary-green: #b9ff66;
+$dark-bg: #191a23;
+
+.testimonials {
+    padding: 80px 0;
+
+    .section-head {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        margin-bottom: 60px;
+
+        .badge {
+            background-color: $primary-green;
+            padding: 5px 15px;
+            border-radius: 7px;
+            font-size: 40px;
+        }
+        p { max-width: 500px; font-size: 18px; }
+    }
+
+    .testimonials-dark-box {
+        background-color: $dark-bg;
+        border-radius: 45px;
+        padding: 80px 40px;
+        overflow: hidden;
+    }
+
+    .testimonials-slider {
+        display: flex;
+        gap: 50px;
+        justify-content: center;
+    }
+
+    .testimonial-item {
+        max-width: 600px;
+
+        .bubble {
+            border: 1px solid $primary-green;
+            border-radius: 45px;
+            padding: 40px;
+            position: relative;
+            margin-bottom: 50px;
+
+            p {
+                color: #fff;
+                font-size: 18px;
+                line-height: 1.5;
+            }
+
+            // Bubble burchagi (pastga qaragan uchburchak)
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -20px;
+                left: 60px;
+                width: 40px;
+                height: 40px;
+                background-color: $dark-bg;
+                border-right: 1px solid $primary-green;
+                border-bottom: 1px solid $primary-green;
+                transform: rotate(45deg);
+            }
+        }
+
+        .author {
+            padding-left: 80px;
+            h4 {
+                color: $primary-green;
+                font-size: 20px;
+                font-weight: 500;
+            }
+            p {
+                color: #fff;
+                font-size: 18px;
+            }
+        }
+    }
+
+    .slider-controls {
+        margin-top: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 150px;
+
+        button {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 30px;
+            cursor: pointer;
+            &:hover { color: $primary-green; }
+        }
+
+        .dots {
+            display: flex;
+            gap: 15px;
+            .dot {
+                width: 14px;
+                height: 14px;
+                background-color: #fff;
+                transform: rotate(45deg); // Yulduzcha ko'rinishi uchun
+                display: inline-block;
+                opacity: 0.5;
+
+                &.active {
+                    background-color: $primary-green;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+// Mobile
+@media (max-width: 768px) {
+    .testimonials-dark-box { padding: 40px 20px; }
+    .testimonial-item .bubble { padding: 25px; }
+    .slider-controls { gap: 50px; }
+}

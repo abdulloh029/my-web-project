@@ -1,0 +1,223 @@
+// Rang o'zgaruvchilari
+$primary-green: #b9ff66;
+$background-gray: #f3f3f3;
+$text-dark: #191a23;
+$white: #ffffff;
+
+.services {
+  padding: 80px 0;
+
+  .container {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .section-head {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 80px;
+
+    .badge {
+      background-color: $primary-green;
+      padding: 5px 15px;
+      border-radius: 7px;
+      font-size: 40px;
+      font-weight: 500;
+    }
+
+    p {
+      max-width: 580px;
+      font-size: 18px;
+      line-height: 1.5;
+    }
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); // 2 tadan ustun
+    gap: 40px; // Kartochkalar orasidagi masofa
+  }
+
+  .service-card {
+    padding: 50px;
+    border-radius: 45px;
+    border: 1px solid $text-dark;
+    box-shadow: 0 5px 0 $text-dark;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .card-title {
+      font-size: 30px;
+      line-height: 1.2;
+      font-weight: 500;
+      margin-bottom: 90px;
+
+      .card-title {
+        font-size: 30px;
+        font-weight: 500;
+        line-height: 1.3; // Qatorlar orasi bir-biriga yopishib qolmasligi uchun
+        margin-bottom: 90px;
+
+        span {
+          background-color: #b9ff66; 
+          color: #000;
+          padding: 0 5px;
+          border-radius: 7px;
+
+
+          display: inline;
+          box-decoration-break: clone;
+          -webkit-box-decoration-break: clone;
+        }
+      }
+    }
+
+    .learn-more {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      text-decoration: none;
+      font-size: 20px;
+
+      .icon {
+        width: 41px;
+        height: 41px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        transition: transform 0.3s ease;
+      }
+
+      &:hover .icon {
+        transform: translateX(5px);
+      }
+    }
+
+    .card-img img {
+      max-width: 210px;
+      height: auto;
+    }
+
+    // Card 1: SEO
+    &.card-1 {
+      background-color: $background-gray;
+      .card-title span {
+        background-color: $primary-green;
+        color: $text-dark;
+      }
+      .learn-more {
+        .text {
+          color: $text-dark;
+        }
+        .icon {
+          background-color: $text-dark;
+          color: $primary-green;
+        }
+      }
+    }
+
+    &.card-2 {
+      background-color: $primary-green;
+      .card-title span {
+        background-color: $white;
+        color: $text-dark;
+      }
+      .learn-more {
+        .text {
+          color: $text-dark;
+        }
+        .icon {
+          background-color: $text-dark;
+          color: $primary-green;
+        }
+      }
+    }
+
+    &.card-3 {
+      background-color: $text-dark;
+      .card-title span {
+        background-color: $white;
+        color: $text-dark;
+      }
+      .learn-more {
+        .text {
+          color: $white;
+        }
+        .icon {
+          background-color: $white;
+          color: $text-dark;
+        }
+      }
+    }
+
+    // Card 4: Email Marketing
+    &.card-4 {
+      background-color: $background-gray;
+      .card-title span {
+        background-color: $primary-green;
+        color: $text-dark;
+      }
+      .learn-more {
+        .text {
+          color: $text-dark;
+        }
+        .icon {
+          background-color: $text-dark;
+          color: $primary-green;
+        }
+      }
+    }
+
+    // Card 5: Content Creation
+    &.card-5 {
+      background-color: $primary-green;
+      .card-title span {
+        background-color: $white;
+        color: $text-dark;
+      }
+      .learn-more {
+        .text {
+          color: $text-dark;
+        }
+        .icon {
+          background-color: $text-dark;
+          color: $primary-green;
+        }
+      }
+    }
+
+    // Card 6: Analytics
+    &.card-6 {
+      background-color: $text-dark;
+      .card-title span {
+        background-color: $primary-green;
+        color: $text-dark;
+      }
+      .learn-more {
+        .text {
+          color: $white;
+        }
+        .icon {
+          background-color: $white;
+          color: $text-dark;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  .services .section-head {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+}

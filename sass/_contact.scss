@@ -1,0 +1,125 @@
+$primary-green: #b9ff66;
+$dark-bg: #191a23;
+$gray-light: #f3f3f3;
+
+.contact {
+    padding: 80px 0;
+
+    .section-head {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        margin-bottom: 60px;
+
+        .badge {
+            background-color: $primary-green;
+            padding: 5px 15px;
+            border-radius: 7px;
+            font-size: 40px;
+        }
+        p { max-width: 350px; font-size: 18px; }
+    }
+
+    .contact-box {
+        background-color: $gray-light;
+        border-radius: 45px;
+        padding: 60px 100px;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .contact-form {
+        flex: 1;
+        max-width: 550px;
+
+        .radio-group {
+            display: flex;
+            gap: 35px;
+            margin-bottom: 40px;
+        }
+
+        .radio-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            font-size: 18px;
+
+            input { display: none; } 
+
+            .checkmark {
+                width: 28px;
+                height: 28px;
+                border: 1px solid #000;
+                border-radius: 50%;
+                display: inline-block;
+                position: relative;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    display: none;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 16px;
+                    height: 16px;
+                    border-radius: 50%;
+                    background: $primary-green;
+                }
+            }
+
+            input:checked ~ .checkmark::after {
+                display: block;
+            }
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            label {
+                display: block;
+                margin-bottom: 10px;
+                font-size: 18px;
+            }
+            input, textarea {
+                width: 100%;
+                padding: 18px 30px;
+                border-radius: 14px;
+                border: 1px solid #000;
+                background: #fff;
+                font-size: 18px;
+                &::placeholder { color: #898989; }
+                &:focus { outline: 1px solid $primary-green; }
+            }
+            textarea {
+                height: 190px;
+                resize: none;
+            }
+        }
+
+        .btn-dark {
+            width: 100%;
+            margin-top: 15px;
+        }
+    }
+
+    .contact-illustration {
+        position: absolute;
+        right: -100px;
+        top: 50%;
+        transform: translateY(-50%);
+        img {
+            max-width: 600px;
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .contact-box {
+        padding: 40px;
+        justify-content: center;
+    }
+    .contact-illustration { display: none; }
+}

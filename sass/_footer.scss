@@ -1,0 +1,136 @@
+$primary-green: #b9ff66;
+$dark-bg: #191a23;
+$white: #ffffff;
+
+.footer {
+    padding-bottom: 50px;
+
+    .footer-dark-box {
+        background-color: $dark-bg;
+        border-radius: 45px 45px 0 0; // Faqat tepadagi burchaklar yumaloq
+        padding: 60px 100px 30px;
+        color: $white;
+    }
+
+    .footer-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 60px;
+
+        .footer-nav ul {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+            a {
+                color: $white;
+                text-decoration: underline;
+                font-size: 18px;
+            }
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 20px;
+            a {
+                width: 35px;
+                height: 35px;
+                background-color: $white;
+                color: $dark-bg;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 18px;
+                transition: 0.3s;
+                &:hover { background-color: $primary-green; }
+            }
+        }
+    }
+
+    .footer-middle {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 50px;
+
+        .footer-contact {
+            .badge-sm {
+                background-color: $primary-green;
+                color: #000;
+                padding: 2px 10px;
+                border-radius: 5px;
+                font-weight: 500;
+                display: inline-block;
+                margin-bottom: 25px;
+            }
+            p {
+                margin-bottom: 15px;
+                font-size: 18px;
+                line-height: 1.5;
+            }
+        }
+
+        .footer-subscribe {
+            background-color: #2b2c39;
+            padding: 50px 40px;
+            border-radius: 14px;
+            display: flex;
+            form {
+                display: flex;
+                gap: 20px;
+                input {
+                    background: transparent;
+                    border: 1px solid $white;
+                    border-radius: 14px;
+                    padding: 20px 25px;
+                    color: $white;
+                    width: 280px;
+                    font-size: 18px;
+                    &::placeholder { color: $white; }
+                }
+                .btn-green {
+                    background-color: $primary-green;
+                    color: #000;
+                    border: none;
+                    padding: 20px 35px;
+                    border-radius: 14px;
+                    font-size: 18px;
+                    cursor: pointer;
+                    white-space: nowrap;
+                }
+            }
+        }
+    }
+
+    .footer-divider {
+        border: none;
+        border-top: 1px solid rgba($white, 0.2);
+        margin-bottom: 30px;
+    }
+
+    .footer-bottom {
+        p {
+            font-size: 16px;
+            a {
+                color: $white;
+                margin-left: 20px;
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+// Responsive
+@media (max-width: 1024px) {
+    .footer-top, .footer-middle {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 30px;
+    }
+    .footer-subscribe form {
+        flex-direction: column;
+        input { width: 100%; }
+    }
+}

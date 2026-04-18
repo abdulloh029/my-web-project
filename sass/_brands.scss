@@ -1,0 +1,47 @@
+.brands {
+    padding: 60px 0;
+
+    .container {
+        max-width: 1500px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .brand-grid {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 30px;
+
+        img {
+            max-height: 35px;
+            width: auto;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+
+            &:hover {
+                filter: grayscale(0%);
+                opacity: 1;
+            }
+        }
+    }
+}
+
+// Mobil qurilmalar uchun moslashtirish
+@media (max-width: 768px) {
+    .brands .brand-grid {
+        justify-content: center;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        place-items: center;
+        gap: 40px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .brands .brand-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

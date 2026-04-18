@@ -1,0 +1,114 @@
+$primary-green: #b9ff66;
+$dark-bg: #191a23;
+$white: #ffffff;
+
+.team {
+    padding: 80px 0;
+
+    .section-head {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        margin-bottom: 80px;
+
+        .badge {
+            background-color: $primary-green;
+            padding: 5px 15px;
+            border-radius: 7px;
+            font-size: 40px;
+        }
+        p {
+            max-width: 500px;
+            font-size: 18px;
+        }
+    }
+
+    .team-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); // 3 ta ustun
+        gap: 40px;
+    }
+
+    .team-card {
+        background-color: $white;
+        border: 1px solid $dark-bg;
+        border-radius: 45px;
+        padding: 40px 35px;
+        box-shadow: 0 5px 0 $dark-bg;
+        position: relative;
+
+        .card-top {
+            display: flex;
+            align-items: flex-end;
+            gap: 20px;
+            position: relative;
+            margin-bottom: 28px;
+
+            .member-photo {
+                width: 100px;
+                height: 100px;
+                // Rasm orqasidagi yashil figura effekti uchun:
+                background-image: url('member-shape.svg');
+                background-size: contain;
+                background-repeat: no-repeat;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                img {
+                    width: 90%;
+                    border-radius: 50%; // Agar figura rasmning o'zida bo'lsa buni o'chiring
+                }
+            }
+
+            .member-info {
+                h3 { font-size: 20px; font-weight: 600; }
+                p { font-size: 16px; color: #333; }
+            }
+
+            .linkedin-icon {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 34px;
+                height: 34px;
+                background-color: $dark-bg;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                img { width: 18px; filter: invert(1); } // LinkedIn belgisini oq qilish
+            }
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid $dark-bg;
+            margin-bottom: 28px;
+        }
+
+        .card-bottom {
+            p {
+                font-size: 18px;
+                line-height: 1.4;
+            }
+        }
+    }
+
+    .team-footer {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 40px;
+    }
+}
+
+// Responsive (Mobil va planshetlar uchun)
+@media (max-width: 1100px) {
+    .team .team-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .team .team-grid { grid-template-columns: 1fr; }
+    .team .section-head { flex-direction: column; text-align: center; }
+}

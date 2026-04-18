@@ -17,22 +17,24 @@ $primary-color: #b9ff66;
     .logo {
         display: flex;
         align-items: center;
-        gap: 10px;
+        gap: 50px;
         font-size: 24px;
         font-weight: bold;
-        img { width: 30px; }
+        img {
+        width: 30px;
+        }
     }
 
     .nav-links {
         display: flex;
         align-items: center;
         list-style: none;
-        gap: 30px;
+        gap: 50px;
 
         li a {
             text-decoration: none;
             color: $dark-color;
-            font-size: 18px;
+            font-size: 48px;
             transition: 0.3s;
 
             &:hover { color: darken($primary-color, 30%); }
